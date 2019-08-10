@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import { weatherKey } from './api-keys'
+
 function App() {
   return (
     <div className="App">
