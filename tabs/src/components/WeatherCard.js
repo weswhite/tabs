@@ -19,7 +19,11 @@ function WeatherCard({location, coord}) {
   return ( 
     <div>
       <h2>{location}</h2>
-      <pre>{ JSON.stringify(weather, null, 2) }</pre>
+      {
+        weather.currently ? 
+        <div>Temperature: {weather.currently.temperature}, Rain: {weather.currently.precipProbability}</div> :
+        null
+      }
     </div>  
   );
 }
