@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import HourlyWeather from './HourlyWeather'
+
 function WeatherCard({location, coord}) {
 
   const [weather, setWeather] = useState({})
@@ -22,6 +24,11 @@ function WeatherCard({location, coord}) {
       {
         weather.currently ? 
         <div>Temperature: {weather.currently.temperature}, Rain: {weather.currently.precipProbability}</div> :
+        null
+      }
+      {
+        weather.hourly ?
+        <HourlyWeather hourly={weather.hourly}/> :
         null
       }
     </div>  
