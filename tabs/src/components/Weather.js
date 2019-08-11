@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
+import WeatherCard from './WeatherCard'
+
 function Weather() {
 
-  const [weather, setWeather] = useState({})
-
-  const location = {lat: '47.6062', lon: '-122.3321'}
-
-  useEffect(() => {
-    fetch(`http://localhost:5051/forecast?lat=${location.lat}&lon=${location.lon}`, {
-      mode: 'cors',
-      method: 'GET',
-      headers:{
-        'Content-Type': 'application/json',
-      }
-    }).then(res => res.json())
-    .then(response => setWeather(response))
-    .catch(error => console.error('Error:', error));
-  }, [])
+  const seattle = {lat: '47.6062', lon: '-122.3321'}
+  const forks = {lat: '47.9504', lon: '-124.3855'}
+  const northBend = {lat: '47.4957', lon: '-121.7868'}
+  const bellingham = {lat: '48.7519', lon: '-122.4787'}
 
   return (
-    <div className="Weather">
-      <pre>{JSON.stringify(weather, null, 2) }</pre>
-    </div>
+    <>
+      <WeatherCard location={'Seattle'} coord={seattle} />
+      <WeatherCard location={'Forks'} coord={forks} />
+      <WeatherCard location={'North Bend'} coord={northBend} />
+      <WeatherCard location={'Bellingham'} coord={bellingham} />
+    </>
   );
 }
 

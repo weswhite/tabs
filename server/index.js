@@ -34,7 +34,7 @@ const limiter = new RateLimit({
 // DarkSky API
 const forecast = new DarkSky(process.env.API_KEY)
 
-app.get('forecast', limiter, (req, res) => {
+app.get('/forecast', limiter, (req, res) => {
   const { lat, lon, units } = req.query
 
   forecast
@@ -42,7 +42,7 @@ app.get('forecast', limiter, (req, res) => {
     .longitude(lon)
     .units(units)
     .language('en')
-    .exclude('minutely,hourly,daily,alerts,flags')
+    .exclude('minutely,daily,alerts,flags')
     .get()
     .then(weather => res.status(200).json(weather))
     .catch(error => res.send(error))
