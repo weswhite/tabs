@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "wes",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "dark-sky": "^1.1.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-rate-limit": "^5.0.0",
+    "paperplane": "^2.3.2",
+    "path": "^0.12.7",
+    "ramda": "^0.26.1",
+    "serve-favicon": "^2.5.0"
+  }
+}
